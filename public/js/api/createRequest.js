@@ -1,8 +1,18 @@
 const createRequest = (options = {}) => {
     let formData = new FormData();
+    if (options.method.toUpperCase() != 'GET') {
         for (let field in options.data) {
             formData.append(field, options.data[field]);
         }
+    } else {
+        let param = '';
+        let arr = [];
+        for (let field in options.data) {
+          arr.push(field + '=' + options.data[field]);
+        }
+        param = arr.join('&');
+        options.url = options.url + '?' + param;
+    }    
     let xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     try {

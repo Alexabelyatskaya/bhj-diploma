@@ -29,6 +29,12 @@
       "email": "t@q.ru",
       "password": "567",
       "id": "335ql8by2kqzbxoy5"
+    },
+    {
+      "name": "12345",
+      "email": "o@demo.ru",
+      "password": "demo",
+      "id": "335ql8b5ckr9f083x"
     }
   ],
   "accounts": [
@@ -46,6 +52,26 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Ddd",
+      "user_id": "335ql8brykqzbaksk",
+      "id": "335ql8ghzkr3spwyq"
+    },
+    {
+      "name": "FAR",
+      "user_id": "335ql8brykqzbaksk",
+      "id": "335ql8cyekrb2z7tl"
+    },
+    {
+      "name": "OPR",
+      "user_id": "335ql8brykqzbaksk",
+      "id": "335ql8cz9krb2zohy"
+    },
+    {
+      "name": "abc",
+      "user_id": "335ql8brykqzbaksk",
+      "id": "x`x"
     }
   ],
   "transactions": [
@@ -183,6 +209,60 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "335ql83k3krf867se",
+      "type": "income",
+      "name": "ccc",
+      "sum": 444,
+      "account_id": "335ql8cz9krb2zohy",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-07-22T18:05:24.589Z"
+    },
+    {
+      "id": "335ql83kxkrf86xwp",
+      "type": "income",
+      "name": "12345",
+      "sum": 111,
+      "account_id": "335ql8ghzkr3spwyq",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-07-22T18:05:58.440Z"
+    },
+    {
+      "id": "335ql83oekrf8kfp1",
+      "type": "expense",
+      "name": "rt",
+      "sum": 11,
+      "account_id": "335ql8ghzkr3spwyq",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-07-22T18:16:28.020Z"
+    },
+    {
+      "id": "55",
+      "type": "income",
+      "name": "45",
+      "sum": 45,
+      "account_id": "335ql8cyekrb2z7tl",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-07-22T18:18:20.805Z"
+    },
+    {
+      "id": "66",
+      "type": "income",
+      "name": "Test transaction",
+      "sum": 3,
+      "account_id": "335ql8ghzkr3spwyq",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-07-31T19:13:32.561Z"
+    },
+    {
+      "id": "335ql8fqtkrt6ghhd",
+      "type": "income",
+      "name": "ddddddd",
+      "sum": 11,
+      "account_id": "335ql8ghzkr3spwyq",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-08-01T12:26:10.944Z"
     }
   ]
 }

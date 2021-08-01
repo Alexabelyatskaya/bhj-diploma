@@ -27,8 +27,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    let obj = JSON.parse(localStorage.getItem('currentUser'));
-    return obj;
+    return JSON.parse(localStorage.getItem('currentUser'));
   }
 
   /**
@@ -76,7 +75,17 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback) {
-    createRequest({url: this.url + '/register', data: data, callback: callback, method: 'POST'});
+    createRequest({
+      url: this.url + '/register', 
+      data, 
+      callback: (err, response) => {
+        if (response && response.user) {
+          this.setCurrent(response.user);
+        }
+        callback(err, response);
+      },
+      method: 'POST'
+    });
   }
 
   /**
@@ -84,6 +93,11 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(callback) {
-    createRequest({url: this.url + '/logout', callback: callback, method: 'POST'});
+    createRequest({url: this.url + '/logout', 
+      callback: (err, response) => {
+        User.unsetCurrent();
+        callback(err, response);
+      },
+      method: 'POST'});
   }
 }

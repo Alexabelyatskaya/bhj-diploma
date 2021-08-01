@@ -12,9 +12,8 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-    if (element == null) {
-      let err = new Error('Элемент не должен быть пустым!');
-      throw err;
+    if (!element) {
+      throw new Error('Элемент не должен быть пустым!');
     }
     this.element = element;
     this.registerEvents();
