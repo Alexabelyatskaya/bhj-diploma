@@ -67,7 +67,6 @@ class TransactionsPage {
               App.updateWidgets();
             }
           };
-          debugger;
           Account.remove({id: this.lastOptions.account_id}, callback);
         }
     }
