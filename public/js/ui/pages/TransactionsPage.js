@@ -10,7 +10,7 @@ class TransactionsPage {
    * Сохраняет переданный элемент и регистрирует события
    * через registerEvents()
    * */
-  constructor( element ) {
+  constructor(element) {
     if (!element) {
       throw new Error('Элемент не должен быть пустым!');
     }
@@ -37,6 +37,16 @@ class TransactionsPage {
     document.querySelector('.remove-account').onclick = () => {
       this.removeAccount();
     }
+    document.querySelector('.content').onclick = () => { 
+      if (event.target.classList.contains('transaction__remove')) {
+        this.removeTransaction(event.target.dataset['id']);
+      }
+      else { 
+        if (event.target.closest('.transaction__remove')) {
+          this.removeTransaction(event.target.closest('.transaction__remove').dataset['id']); 
+        }
+      }
+    };
   }
 
   /**
@@ -57,7 +67,8 @@ class TransactionsPage {
               App.updateWidgets();
             }
           };
-          Account.remove(this.lastOptions.account_id, callback);
+          debugger;
+          Account.remove({id: this.lastOptions.account_id}, callback);
         }
     }
   }
@@ -76,7 +87,7 @@ class TransactionsPage {
           App.update();
         }
       };
-      Transaction.remove(id, callback);
+      Transaction.remove({id}, callback);
     }
   }
 
@@ -87,22 +98,22 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
-    this.clear();
+    //this.clear();
     this.lastOptions = options;
     let callback = (error, response) => {
       if (!error) {
         this.renderTitle(response.data.name);
-        let user = User.current();
+      }
+    };
+    Account.get(options.account_id, callback);
+    let user = User.current();
         if (user) {
           let data = {mail: user.email, account_id: options.account_id};
           let callback2 = (error, response) => {
             this.renderTransactions(response.data);
           };
           Transaction.list(data, callback2);
-        }  
-      }
-    };
-    Account.get(options.account_id, callback);
+        }
   }
 
   /**
@@ -178,9 +189,6 @@ class TransactionsPage {
       let trans = this.getTransactionHTML(item);
       let div = document.createElement('div');
       div.innerHTML = trans;
-      div.firstChild.querySelector('.transaction__remove').onclick = () => {
-        this.removeTransaction(event.currentTarget.dataset['id']);
-      };
       obj.appendChild(div.firstChild);
     }
   }

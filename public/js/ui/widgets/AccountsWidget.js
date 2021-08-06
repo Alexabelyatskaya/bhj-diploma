@@ -35,9 +35,7 @@ class AccountsWidget {
     };
     let arr = document.querySelectorAll('.account');
     for (let item of arr) {
-      console.log(222);
       item.onclick = () => {
-        console.log(555);
         this.onSelectAccount(item);
       };
     }
@@ -57,8 +55,7 @@ class AccountsWidget {
     let user = User.current();
     if (user && user.id) {
       let data = {
-        mail: user.email,
-        password: user.password
+        mail: user.email
       };
       let callback = (error, response) => {
         if (!error) {
@@ -69,7 +66,7 @@ class AccountsWidget {
         }
         this.registerEvents();
       }
-      Account.list(data, callback);
+      createRequest({url: '/account', data, callback, method: 'GET'});
     }
   }
 
@@ -110,7 +107,7 @@ class AccountsWidget {
    * */
   getAccountHTML(item){
    let code =
-    `<li class="active account" data-id="${item.id}">
+    `<li class="account" data-id="${item.id}">
     <a href="#">
         <span>${item.name}</span> /
         <span>${item.sum} ₽</span>

@@ -211,58 +211,31 @@
       "user_id": "1"
     },
     {
-      "id": "335ql83k3krf867se",
+      "id": "335ql8bgjkrzbrqdk",
       "type": "income",
-      "name": "ccc",
-      "sum": 444,
+      "name": "1",
+      "sum": 10,
+      "account_id": "335ql8ghzkr3spwyq",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-08-05T19:41:30.823Z"
+    },
+    {
+      "id": "335ql8bhfkrzbs3qy",
+      "type": "expense",
+      "name": "2",
+      "sum": 7,
+      "account_id": "335ql8ghzkr3spwyq",
+      "user_id": "335ql8brykqzbaksk",
+      "created_at": "2021-08-05T19:41:48.153Z"
+    },
+    {
+      "id": "335ql8bjsks08k4mh",
+      "type": "income",
+      "name": "1",
+      "sum": 15,
       "account_id": "335ql8cz9krb2zohy",
       "user_id": "335ql8brykqzbaksk",
-      "created_at": "2021-07-22T18:05:24.589Z"
-    },
-    {
-      "id": "335ql83kxkrf86xwp",
-      "type": "income",
-      "name": "12345",
-      "sum": 111,
-      "account_id": "335ql8ghzkr3spwyq",
-      "user_id": "335ql8brykqzbaksk",
-      "created_at": "2021-07-22T18:05:58.440Z"
-    },
-    {
-      "id": "335ql83oekrf8kfp1",
-      "type": "expense",
-      "name": "rt",
-      "sum": 11,
-      "account_id": "335ql8ghzkr3spwyq",
-      "user_id": "335ql8brykqzbaksk",
-      "created_at": "2021-07-22T18:16:28.020Z"
-    },
-    {
-      "id": "55",
-      "type": "income",
-      "name": "45",
-      "sum": 45,
-      "account_id": "335ql8cyekrb2z7tl",
-      "user_id": "335ql8brykqzbaksk",
-      "created_at": "2021-07-22T18:18:20.805Z"
-    },
-    {
-      "id": "66",
-      "type": "income",
-      "name": "Test transaction",
-      "sum": 3,
-      "account_id": "335ql8ghzkr3spwyq",
-      "user_id": "335ql8brykqzbaksk",
-      "created_at": "2021-07-31T19:13:32.561Z"
-    },
-    {
-      "id": "335ql8fqtkrt6ghhd",
-      "type": "income",
-      "name": "ddddddd",
-      "sum": 11,
-      "account_id": "335ql8ghzkr3spwyq",
-      "user_id": "335ql8brykqzbaksk",
-      "created_at": "2021-08-01T12:26:10.944Z"
+      "created_at": "2021-08-06T10:59:23.368Z"
     }
   ]
 }
