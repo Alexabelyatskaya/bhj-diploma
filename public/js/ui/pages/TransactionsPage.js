@@ -81,7 +81,7 @@ class TransactionsPage {
   removeTransaction(id) {
     let question = confirm('Вы действительно хотите удалить эту транзакцию?');
     if (question) {
-      let callback = function(error, response) {
+      let callback = (error, response) => {
         if (!error) {
           App.update();
         }
@@ -97,7 +97,7 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
-    //this.clear();
+  //  this.clear();
     this.lastOptions = options;
     let callback = (error, response) => {
       if (!error) {

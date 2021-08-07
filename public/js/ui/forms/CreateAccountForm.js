@@ -12,6 +12,7 @@ class CreateAccountForm extends AsyncForm {
     let callback = () => {
       App.getModal('createAccount').close();
       App.update();
+      this.element.reset();
     }
     Account.create(data, callback);
   }
